@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChromecastsComponent } from './chromecasts.component';
+import { ChromecastListComponent } from './chromecast-list.component';
 
-describe('ChromecastsComponent', () => {
-  let component: ChromecastsComponent;
-  let fixture: ComponentFixture<ChromecastsComponent>;
+describe('ChromecastListComponent', () => {
+  let component: ChromecastListComponent;
+  let fixture: ComponentFixture<ChromecastListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChromecastsComponent ]
+      declarations: [ ChromecastListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChromecastsComponent);
+    fixture = TestBed.createComponent(ChromecastListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

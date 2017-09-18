@@ -1,0 +1,14 @@
+<div>
+  <form (ngSubmit)="sendMessage()">
+    <select name="device" [(ngModel)]="message.device">
+      <option *ngFor="let chromecast of chromecasts" [value]="chromecast.deviceName">{{chromecast.name}}</option>
+    </select>
+    <input name="'text" placeholder="Message" [(ngModel)]="message.text">
+    <select name="language" [(ngModel)]="message.language">
+      <option value="fr-CA">Français</option>
+      <option value="en">Anglais</option>
+      <option value="en-UK">British</option>
+    </select>
+    <button type="submit">Envoyer</button>
+  </form>
+</div>
