@@ -1,18 +1,18 @@
 <div>
-  <form (ngSubmit)="sendMessage()">
-    <md-select name="device" [(ngModel)]="message.device">
+  <form class="row-form" (ngSubmit)="sendMessage()">
+    <md-select class="item-form" name="device" [(ngModel)]="message.device">
       <md-option *ngFor="let chromecast of chromecasts" [value]="chromecast.deviceName">
         {{chromecast.name}}
       </md-option>
     </md-select>
-    <md-form-field>
+    <md-form-field class="item-form">
       <input mdInput name="'text" placeholder="Message" [(ngModel)]="message.text">
     </md-form-field>
-    <md-select name="language" [(ngModel)]="message.language">
+    <md-select class="item-form" name="language" [(ngModel)]="message.language">
       <md-option value="fr-CA">Français</md-option>
       <md-option value="en">Anglais</md-option>
       <md-option value="en-UK">British</md-option>
     </md-select>
-    <button md-icon-button type="submit"><md-icon>volume_up</md-icon></button>
+    <button class="item-form" md-icon-button type="submit"><md-icon>volume_up</md-icon></button>
   </form>
 </div>

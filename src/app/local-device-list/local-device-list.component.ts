@@ -21,7 +21,7 @@ export class LocalDeviceListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.loadLocalDevices();
+    // this.loadLocalDevices();
     this.dataSource = new LocalDeviceDataSource(this._localDeviceService);
   }
 
