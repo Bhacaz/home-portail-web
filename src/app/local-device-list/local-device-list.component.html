@@ -1,0 +1,16 @@
+<div>
+
+  <table style="width:100%">
+    <tr>
+      <th>Name</th>
+      <th>IP</th>
+      <th>Mac address</th>
+    </tr>
+    <tr *ngFor="let localDevice of localDevices">
+      <td>{{localDevice.name}}</td>
+      <td>{{localDevice.ip}}</td>
+      <td>{{localDevice.mac}}</td>
+    </tr>
+  </table>
+
+</div>

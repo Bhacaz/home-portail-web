@@ -4,11 +4,12 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import {Chromecast} from './chromecast';
+import {environment} from "../../environments/environment";
 
 @Injectable()
 export class ChromecastService {
 
-  private baseUrl = 'http://localhost:3000/api/chromecasts/';
+  private baseUrl = environment.apiUrl + 'chromecasts/';
   constructor(private http: Http) {
   }
 

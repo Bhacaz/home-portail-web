@@ -1,14 +1,45 @@
 <div>
   <form (ngSubmit)="sendMessage()">
-    <select name="device" [(ngModel)]="message.device">
-      <option *ngFor="let chromecast of chromecasts" [value]="chromecast.deviceName">{{chromecast.name}}</option>
-    </select>
-    <input name="'text" placeholder="Message" [(ngModel)]="message.text">
-    <select name="language" [(ngModel)]="message.language">
-      <option value="fr-CA">Français</option>
-      <option value="en">Anglais</option>
-      <option value="en-UK">British</option>
-    </select>
-    <button type="submit">Envoyer</button>
+    <md-select name="device" [(ngModel)]="message.device">
+      <md-option *ngFor="let chromecast of chromecasts" [value]="chromecast.deviceName">
+        {{chromecast.name}}
+      </md-option>
+    </md-select>
+    <md-form-field>
+      <input mdInput name="'text" placeholder="Message" [(ngModel)]="message.text">
+    </md-form-field>
+    <md-select name="language" [(ngModel)]="message.language">
+      <md-option value="fr-CA">Français</md-option>
+      <md-option value="en">Anglais</md-option>
+      <md-option value="en-UK">British</md-option>
+    </md-select>
+    <button md-icon-button type="submit"><md-icon>volume_up</md-icon></button>
   </form>
+</div>
+
+
+<div>
+  <md-table #table [dataSource]="chromecasts">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <ng-container mdColumnDef="name">
+      <md-header-cell *mdHeaderCellDef> Nom </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.name}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="ip">
+      <md-header-cell *mdHeaderCellDef> Addresse IP </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.ip}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="mac">
+      <md-header-cell *mdHeaderCellDef> Mac Adresse </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.mac}} </md-cell>
+    </ng-container>
+
+    <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+    <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+  </md-table>
 </div>

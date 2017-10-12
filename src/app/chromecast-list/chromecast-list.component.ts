@@ -12,7 +12,7 @@ export class ChromecastListComponent implements OnInit {
   chromecasts: Chromecast[];
   message: any = {
     device: '',
-    language: '',
+    language: 'fr-CA',
     text: ''
   };
 
