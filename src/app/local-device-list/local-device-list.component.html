@@ -14,3 +14,30 @@
   </table>
 
 </div>
+
+
+<div>
+  <md-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <ng-container mdColumnDef="name">
+      <md-header-cell *mdHeaderCellDef> Nom </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.name}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="ip">
+      <md-header-cell *mdHeaderCellDef> Addresse IP </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.ip}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="mac">
+      <md-header-cell *mdHeaderCellDef> Mac Adresse </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.mac}} </md-cell>
+    </ng-container>
+
+    <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+    <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+  </md-table>
+</div>

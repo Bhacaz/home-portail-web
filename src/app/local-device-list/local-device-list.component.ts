@@ -3,7 +3,6 @@ import {LocalDevice} from "./local-device";
 import {LocalDeviceService} from "./local-device.service";
 import {DataSource} from "@angular/cdk/collections";
 import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
 
 
 @Component({
@@ -14,7 +13,9 @@ import 'rxjs/add/observable/of';
 export class LocalDeviceListComponent implements OnInit {
 
   localDevices: LocalDevice[] = [];
-  dataSource: LocalDevice | null;
+  dataSource: LocalDeviceDataSource | null;
+  displayedColumns = ['name', 'ip', 'mac'];
+
   constructor(
     private _localDeviceService: LocalDeviceService
   ) { }
@@ -35,12 +36,12 @@ export class LocalDeviceListComponent implements OnInit {
 
 export class LocalDeviceDataSource extends DataSource<LocalDevice> {
 
-  constructor(private localDeviceService: LocalDeviceService) {
+  constructor(private _localDeviceService: LocalDeviceService) {
     super();
   }
 
   connect(): Observable<LocalDevice[]> {
-    return Observable.of(this.localDevices);
+    return this._localDeviceService.getAll();
   }
 
   disconnect() {}
