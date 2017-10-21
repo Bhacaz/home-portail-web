@@ -16,7 +16,7 @@ export class ChromecastService {
   getAll() {
     return this.http
       .get(this.baseUrl + 'getDevices')
-      .map(res => res.json().devices);
+      .map(res => res.json());
   }
 
   sendMessage(message) {

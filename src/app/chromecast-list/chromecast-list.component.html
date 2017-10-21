@@ -1,18 +1,55 @@
-<div>
-  <form class="row-form" (ngSubmit)="sendMessage()">
-    <md-select class="item-form" name="device" [(ngModel)]="message.device">
-      <md-option *ngFor="let chromecast of chromecasts" [value]="chromecast.deviceName">
-        {{chromecast.name}}
-      </md-option>
-    </md-select>
-    <md-form-field class="item-form">
-      <input mdInput name="'text" placeholder="Message" [(ngModel)]="message.text">
-    </md-form-field>
-    <md-select class="item-form" name="language" [(ngModel)]="message.language">
-      <md-option value="fr-CA">Français</md-option>
-      <md-option value="en">Anglais</md-option>
-      <md-option value="en-UK">British</md-option>
-    </md-select>
-    <button class="item-form" md-icon-button type="submit"><md-icon>volume_up</md-icon></button>
-  </form>
-</div>
+
+
+<md-card>
+  <md-card-header>
+    <md-card-title>
+      Chromecasts
+    </md-card-title>
+  </md-card-header>
+
+  <md-card-content>
+    <form (ngSubmit)="sendMessage()">
+
+      <div class="container"
+           fxLayout
+           fxLayout.xs="column"
+           fxLayoutAlign="center"
+           fxLayoutGap="10px"
+           fxLayoutGap.xs="0">
+
+        <div fxFlex="60%">
+          <md-select name="device" placeholder="Appareil" [(ngModel)]="message.device">
+            <md-option *ngFor="let chromecast of chromecasts" [value]="chromecast.deviceName">
+              {{chromecast.name}}
+            </md-option>
+          </md-select>
+        </div>
+
+        <div fxFlex="40%">
+          <md-select name="language" [(ngModel)]="message.language">
+            <md-option value="fr-CA">Français</md-option>
+            <md-option value="en">Anglais</md-option>
+            <md-option value="en-UK">British</md-option>
+          </md-select>
+        </div>
+      </div>
+
+      <div class="container"
+           fxLayout
+           fxLayout.xs="column"
+           fxLayoutAlign="center"
+           fxLayoutGap="10px"
+           fxLayoutGap.xs="0">
+        <div fxFlex class="input-message">
+          <md-form-field>
+            <input mdInput name="'text" placeholder="Message" [(ngModel)]="message.text">
+          </md-form-field>
+        </div>
+      </div>
+
+    </form>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button class="item-form" type="submit">Envoyer</button>
+  </md-card-actions>
+</md-card>

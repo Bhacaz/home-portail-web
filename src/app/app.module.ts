@@ -13,8 +13,9 @@ import {
   MatButtonModule, MdFormFieldModule, MdIconModule, MdInputModule, MdSelectModule,
   MdTableModule
 } from '@angular/material';
-import {CdkTableModule} from "@angular/cdk/table";
-
+import {MatCardModule} from '@angular/material';
+import { FlexLayoutModule } from "@angular/flex-layout";
+import {MatToolbarModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,10 @@ import {CdkTableModule} from "@angular/cdk/table";
     MdFormFieldModule,
     MdInputModule,
     MdSelectModule,
-    MdTableModule
+    MdTableModule,
+    MatCardModule,
+    FlexLayoutModule,
+    MatToolbarModule
   ],
   providers: [
     ChromecastService,

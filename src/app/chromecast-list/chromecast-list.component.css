@@ -1,7 +1,7 @@
-.row-form{
-  display: inline-flex;
+md-form-field{
+  display: inline;
 }
 
-.item-form{
-  margin-left: 10px;
+.input-message{
+  padding-top: 15px;
 }
