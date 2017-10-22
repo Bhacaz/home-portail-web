@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -16,12 +16,20 @@ import {
 import {MatCardModule} from '@angular/material';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import {MatToolbarModule} from '@angular/material';
+import { CardToolbarComponent } from './card/card-toolbar/card-toolbar.component';
+import {MatProgressSpinnerModule} from '@angular/material';
+import { CardSpinnerComponent } from './card/card-spinner/card-spinner.component';
+import { CardProgressBarComponent } from './card/card-progress-bar/card-progress-bar.component';
+import {MatProgressBarModule} from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChromecastListComponent,
-    LocalDeviceListComponent
+    LocalDeviceListComponent,
+    CardToolbarComponent,
+    CardSpinnerComponent,
+    CardProgressBarComponent
   ],
   imports: [
     BrowserModule,
@@ -36,12 +44,15 @@ import {MatToolbarModule} from '@angular/material';
     MdTableModule,
     MatCardModule,
     FlexLayoutModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule
   ],
   providers: [
     ChromecastService,
     LocalDeviceService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }

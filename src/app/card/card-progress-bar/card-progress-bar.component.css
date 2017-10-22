@@ -1,0 +1,9 @@
+:host {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+:host /deep/ md-progress-bar{
+  height: 3px;
+}

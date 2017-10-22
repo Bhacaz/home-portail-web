@@ -9,6 +9,7 @@ import {Chromecast} from "./chromecast";
 })
 export class ChromecastListComponent implements OnInit {
 
+  loading: boolean = true;
   chromecasts: Chromecast[];
   message: any = {
     device: '',
@@ -23,13 +24,16 @@ export class ChromecastListComponent implements OnInit {
   }
 
   loadChromecasts() {
+    this.loading = true;
     this._chromecastService.getAll()
-      .subscribe(data => this.chromecasts = data);
+      .subscribe(data => {
+        this.chromecasts = data;
+        this.loading = false;
+      });
   }
 
   sendMessage() {
     this._chromecastService.sendMessage(this.message);
-    console.log(this.message);
   }
 
 }

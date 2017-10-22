@@ -1,0 +1,24 @@
+:host {
+  width: 100%;
+}
+
+.card-toolbar{
+  margin-bottom: 15px;
+}
+
+.card-toolbar-title{
+  line-height: 25px;
+  vertical-align: middle;
+  font-size: large;
+}
+
+:host /deep/ .mat-icon-button {
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+}
+
+:host /deep/ md-icon {
+  font-size: 20px;
+}
+

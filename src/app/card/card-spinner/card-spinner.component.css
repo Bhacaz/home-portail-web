@@ -1,0 +1,14 @@
+:host {
+  height: 200px;
+  line-height: 200px;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+  display: block;
+}
+
+:host /deep/ md-spinner{
+  height: 40px;
+  width: 40px;
+  display: inline-flex;
+}

@@ -1,55 +1,56 @@
-
-
 <md-card>
   <md-card-header>
-    <md-card-title>
-      Chromecasts
-    </md-card-title>
+    <card-toolbar>
+      <card-toolbar-title>
+        Chromecasts
+      </card-toolbar-title>
+      <card-toolbar-actions>
+        <button (click)="loadChromecasts()" md-icon-button><md-icon>refresh</md-icon></button>
+      </card-toolbar-actions>
+    </card-toolbar>
+    <card-progress-bar *ngIf="loading"></card-progress-bar>
   </md-card-header>
-
   <md-card-content>
-    <form (ngSubmit)="sendMessage()">
 
-      <div class="container"
-           fxLayout
-           fxLayout.xs="column"
-           fxLayoutAlign="center"
-           fxLayoutGap="10px"
-           fxLayoutGap.xs="0">
+    <div class="container"
+         fxLayout
+         fxLayout.xs="column"
+         fxLayoutAlign="center"
+         fxLayoutGap="10px"
+         fxLayoutGap.xs="0">
 
-        <div fxFlex="60%">
-          <md-select name="device" placeholder="Appareil" [(ngModel)]="message.device">
-            <md-option *ngFor="let chromecast of chromecasts" [value]="chromecast.deviceName">
-              {{chromecast.name}}
-            </md-option>
-          </md-select>
-        </div>
-
-        <div fxFlex="40%">
-          <md-select name="language" [(ngModel)]="message.language">
-            <md-option value="fr-CA">Français</md-option>
-            <md-option value="en">Anglais</md-option>
-            <md-option value="en-UK">British</md-option>
-          </md-select>
-        </div>
+      <div fxFlex="60%">
+        <md-select class="full-width" name="device" placeholder="Appareil" [(ngModel)]="message.device" [disabled]="loading" >
+          <md-option *ngFor="let chromecast of chromecasts" [value]="chromecast.deviceName">
+            {{chromecast.name}}
+          </md-option>
+        </md-select>
       </div>
 
-      <div class="container"
-           fxLayout
-           fxLayout.xs="column"
-           fxLayoutAlign="center"
-           fxLayoutGap="10px"
-           fxLayoutGap.xs="0">
-        <div fxFlex class="input-message">
-          <md-form-field>
-            <input mdInput name="'text" placeholder="Message" [(ngModel)]="message.text">
-          </md-form-field>
-        </div>
+      <div fxFlex="40%">
+        <md-select name="language" [(ngModel)]="message.language" [disabled]="loading" >
+          <md-option value="fr-CA">Français</md-option>
+          <md-option value="en">Anglais</md-option>
+          <md-option value="en-UK">British</md-option>
+        </md-select>
       </div>
+    </div>
 
-    </form>
+    <div class="container"
+         fxLayout
+         fxLayout.xs="column"
+         fxLayoutAlign="center"
+         fxLayoutGap="10px"
+         fxLayoutGap.xs="0">
+      <div fxFlex class="input-message">
+        <md-form-field>
+          <input mdInput name="'text" placeholder="Message" [(ngModel)]="message.text" [disabled]="loading" >
+        </md-form-field>
+      </div>
+    </div>
   </md-card-content>
-  <md-card-actions>
-    <button md-button class="item-form" type="submit">Envoyer</button>
+
+  <md-card-actions >
+    <button (click)="sendMessage()" md-raised-button class="item-form" type="submit" [disabled]="loading" >Envoyer</button>
   </md-card-actions>
 </md-card>

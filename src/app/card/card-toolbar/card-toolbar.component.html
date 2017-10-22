@@ -1,0 +1,14 @@
+<div class="container card-toolbar"
+     fxLayout
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0">
+
+  <div fxFlex="<grow>" class="card-toolbar-title">
+    <ng-content select="card-toolbar-title"></ng-content>
+  </div>
+  <div fxFlex class="card-toolbar-actions">
+    <ng-content select="card-toolbar-actions"></ng-content>
+  </div>
+</div>
