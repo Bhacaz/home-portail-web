@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {LocalDevice} from "./local-device";
 import {LocalDeviceService} from "./local-device.service";
 import {DataSource} from "@angular/cdk/collections";
 import {Observable} from 'rxjs/Observable';
-
 
 @Component({
   selector: 'app-local-device-list',
@@ -17,21 +16,20 @@ export class LocalDeviceListComponent implements OnInit {
   displayedColumns = ['name', 'ip', 'mac'];
 
   constructor(
-    private _localDeviceService: LocalDeviceService
+    private _localDeviceService: LocalDeviceService,
   ) { }
 
   ngOnInit() {
-    // this.loadLocalDevices();
-    this.dataSource = new LocalDeviceDataSource(this._localDeviceService);
+    this.loadLocalDevices();
   }
 
   loadLocalDevices() {
-    this._localDeviceService.getAll()
+    this.dataSource = new LocalDeviceDataSource(this._localDeviceService);
+    this.dataSource.connect()
       .subscribe(data => {
         this.localDevices = data;
       });
   }
-
 }
 
 export class LocalDeviceDataSource extends DataSource<LocalDevice> {

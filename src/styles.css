@@ -11,4 +11,9 @@ body {
 
 .mat-card-header{
   display: block !important;
+  padding-bottom: 15px;
+}
+
+.fill-space{
+  flex: 1 1 auto;
 }

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import {LOCALE_ID, NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -21,6 +21,10 @@ import {MatProgressSpinnerModule} from '@angular/material';
 import { CardSpinnerComponent } from './card/card-spinner/card-spinner.component';
 import { CardProgressBarComponent } from './card/card-progress-bar/card-progress-bar.component';
 import {MatProgressBarModule} from '@angular/material';
+import { WeatherCurrentComponent } from './conditions/weather/weather-current/weather-current.component';
+import { WeatherForecastComponent } from './conditions/weather/weather-forecast/weather-forecast.component';
+import { WeatherIndoorComponent } from './conditions/weather/weather-indoor/weather-indoor.component';
+import { DateTimeComponent } from './conditions/date-time/date-time.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import {MatProgressBarModule} from '@angular/material';
     LocalDeviceListComponent,
     CardToolbarComponent,
     CardSpinnerComponent,
-    CardProgressBarComponent
+    CardProgressBarComponent,
+    WeatherCurrentComponent,
+    WeatherForecastComponent,
+    WeatherIndoorComponent,
+    DateTimeComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +58,8 @@ import {MatProgressBarModule} from '@angular/material';
   ],
   providers: [
     ChromecastService,
-    LocalDeviceService
+    LocalDeviceService,
+    { provide: LOCALE_ID, useValue: 'fr-CA' }
   ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]

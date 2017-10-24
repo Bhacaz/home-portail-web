@@ -1,5 +1,7 @@
 <md-toolbar>
-  Portail des Oubliettes
+  <span>Portail des Oubliettes</span>
+  <span class="fill-space"></span>
+  <span>{{currentTime | date:'d MMM y - H:mm:ss'}}</span>
 </md-toolbar>
 <div id="main-container">
   <div class="container"
@@ -8,10 +10,10 @@
        fxLayoutAlign="center"
        fxLayoutGap="10px"
        fxLayoutGap.xs="0">
-    <div fxFlex>
+    <div fxFlex>Something else</div>
+    <div fxFlex="350px">
       <app-chromecast-list></app-chromecast-list>
     </div>
-    <div fxFlex>Something else</div>
   </div>
 
   <div class="container"
