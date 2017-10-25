@@ -17,3 +17,15 @@ body {
 .fill-space{
   flex: 1 1 auto;
 }
+
+.right-separator {
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(0,0,0,.12);
+}
+
+.left-separator {
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(0,0,0,.12);
+}

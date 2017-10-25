@@ -1,0 +1,12 @@
+:host {
+  height: 90px;
+}
+
+.container{
+  text-align: center;
+  font-size: large;
+}
+
+#date{
+  font-size: x-large;
+}

@@ -1,16 +1,35 @@
 <md-toolbar>
   <span>Portail des Oubliettes</span>
-  <span class="fill-space"></span>
-  <span>{{currentTime | date:'d MMM y - H:mm:ss'}}</span>
 </md-toolbar>
 <div id="main-container">
   <div class="container"
        fxLayout
        fxLayout.xs="column"
-       fxLayoutAlign="center"
+       fxLayoutAlign="center stretch"
        fxLayoutGap="10px"
        fxLayoutGap.xs="0">
-    <div fxFlex>Something else</div>
+    <div fxFlex>
+      <div class="container"
+           fxLayout
+           fxLayout.xs="column"
+           fxLayoutAlign="center"
+           fxLayoutGap="10px"
+           fxLayoutGap.xs="0">
+        <div fxFlex><date-time></date-time></div>
+
+      </div>
+      <div class="container"
+           fxLayout
+           fxLayout.xs="column"
+           fxLayoutAlign="center"
+           fxLayoutGap="10px"
+           fxLayoutGap.xs="10px">
+        <div style="border: dashed" fxFlex="150px"><weather-indoor></weather-indoor></div>
+        <div fxFlex><weather-current></weather-current></div>
+        <div fxFlex><weather-forecast></weather-forecast></div>
+
+      </div>
+    </div>
     <div fxFlex="350px">
       <app-chromecast-list></app-chromecast-list>
     </div>
