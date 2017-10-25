@@ -25,6 +25,7 @@ import { WeatherCurrentComponent } from './conditions/weather/weather-current/we
 import { WeatherForecastComponent } from './conditions/weather/weather-forecast/weather-forecast.component';
 import { WeatherIndoorComponent } from './conditions/weather/weather-indoor/weather-indoor.component';
 import { DateTimeComponent } from './conditions/date-time/date-time.component';
+import {WeatherService} from "./conditions/weather/weather.service";
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { DateTimeComponent } from './conditions/date-time/date-time.component';
   providers: [
     ChromecastService,
     LocalDeviceService,
+    WeatherService,
     { provide: LOCALE_ID, useValue: 'fr-CA' }
   ],
   bootstrap: [AppComponent],

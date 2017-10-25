@@ -7,6 +7,48 @@
     </card-toolbar>
   </md-card-header>
   <md-card-content>
-    Workds
+
+    <div class="container"
+         fxLayout
+         fxLayout.xs="column"
+         fxLayoutAlign="center stretch"
+         fxLayoutGap="10px"
+         fxLayoutGap.xs="10px">
+
+      <div fxFlex="30%" class="center-text right-separator">
+        <img src={{currentWeather?.iconUrl}} alt="Weather icon" />
+      </div>
+      <div fxFlex class="center-text">
+        <h2>{{currentWeather?.main.temp}} °</h2>
+      </div>
+      <div fxFlex class="center-text right-separator">
+          {{currentWeather?.main.temp_min}} °
+          <br>
+          {{currentWeather?.main.temp_max}} °
+      </div>
+      <div fxFlex="20%" class="center-text">
+        <h2>{{currentWeather?.main.humidity}} %</h2>
+      </div>
+    </div>
+
+    <div class="container"
+         fxLayout
+         fxLayout.xs="column"
+         fxLayoutAlign="center stretch"
+         fxLayoutGap="10px"
+         fxLayoutGap.xs="10px">
+
+      <div fxFlex="30%" class="center-text capitalize right-separator">
+        {{currentWeather?.weather[0].description}}
+      </div>
+      <div fxFlex class="center-text right-separator">
+        <h2>{{currentWeather?.wind.speed}} km/h</h2>
+      </div>
+      <div fxFlex="20%" class="center-text">
+        {{currentWeather?.wind.deg}} °
+      </div>
+    </div>
+
+
   </md-card-content>
 </md-card>
