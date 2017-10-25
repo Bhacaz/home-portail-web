@@ -7,29 +7,23 @@
        fxLayout.xs="column"
        fxLayoutAlign="center stretch"
        fxLayoutGap="10px"
-       fxLayoutGap.xs="0">
+       fxLayoutGap.xs="10px">
     <div fxFlex>
       <div class="container"
-           fxLayout
+           fxLayout="column"
            fxLayout.xs="column"
-           fxLayoutAlign="center"
-           fxLayoutGap="10px"
-           fxLayoutGap.xs="0">
-        <div fxFlex><date-time></date-time></div>
-
-      </div>
-      <div class="container"
-           fxLayout
-           fxLayout.xs="column"
-           fxLayoutAlign="center"
+           fxLayoutAlign="center strecth"
            fxLayoutGap="10px"
            fxLayoutGap.xs="10px">
-        <div fxFlex><weather-indoor></weather-indoor></div>
+        <div fxFlex><date-time></date-time></div>
         <div fxFlex><weather-current></weather-current></div>
         <div fxFlex><weather-forecast></weather-forecast></div>
-
       </div>
+
+
     </div>
+    <div fxFlex="150px"><weather-indoor></weather-indoor></div>
+
     <div fxFlex="350px">
       <app-chromecast-list></app-chromecast-list>
     </div>
