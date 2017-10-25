@@ -26,6 +26,7 @@ import { WeatherForecastComponent } from './conditions/weather/weather-forecast/
 import { WeatherIndoorComponent } from './conditions/weather/weather-indoor/weather-indoor.component';
 import { DateTimeComponent } from './conditions/date-time/date-time.component';
 import {WeatherService} from "./conditions/weather/weather.service";
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import {WeatherService} from "./conditions/weather/weather.service";
     FlexLayoutModule,
     MatToolbarModule,
     MatProgressSpinnerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    ChartsModule
   ],
   providers: [
     ChromecastService,

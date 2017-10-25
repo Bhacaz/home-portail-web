@@ -7,6 +7,23 @@
     </card-toolbar>
   </md-card-header>
   <md-card-content>
-    Workds
+    <div style="display: block;">
+      <canvas baseChart
+              [datasets]="forecastTempData"
+              [labels]="forecastTempLabel"
+              [options]="lineChartOptions"
+              [legend]="lineChartLegend"
+              [chartType]="lineChartType"></canvas>
+    </div>
+
+    <div style="display: block;">
+      <canvas baseChart
+              [datasets]="forecastRainData"
+              [labels]="forecastTempLabel"
+              [options]="lineChartOptions"
+              [legend]="lineChartLegend"
+              [chartType]="lineChartType"></canvas>
+    </div>
+
   </md-card-content>
 </md-card>
