@@ -7,7 +7,7 @@
   display: block;
 }
 
-:host /deep/ md-spinner{
+:host /deep/ mat-spinner{
   height: 40px;
   width: 40px;
   display: inline-flex;

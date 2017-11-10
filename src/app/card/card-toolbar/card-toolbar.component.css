@@ -18,7 +18,7 @@
   line-height: 25px;
 }
 
-:host /deep/ md-icon {
+:host /deep/ mat-icon {
   font-size: 20px;
 }
 

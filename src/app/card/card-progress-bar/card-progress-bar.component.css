@@ -4,6 +4,6 @@
   right: 0;
 }
 
-:host /deep/ md-progress-bar{
+:host /deep/ mat-progress-bar{
   height: 3px;
 }

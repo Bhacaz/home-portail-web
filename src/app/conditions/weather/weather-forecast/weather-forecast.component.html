@@ -1,12 +1,12 @@
-<md-card>
-  <md-card-header>
+<mat-card>
+  <mat-card-header>
     <card-toolbar>
       <card-toolbar-title>
         Prévision
       </card-toolbar-title>
     </card-toolbar>
-  </md-card-header>
-  <md-card-content>
+  </mat-card-header>
+  <mat-card-content>
     <div style="display: block;">
       <canvas baseChart
               [datasets]="forecastTempData"
@@ -26,5 +26,5 @@
               [chartType]="lineChartType"></canvas>
     </div>
 
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>

@@ -1,16 +1,16 @@
-<md-card>
-  <md-card-header>
+<mat-card>
+  <mat-card-header>
     <card-toolbar>
       <card-toolbar-title>
         Chromecasts
       </card-toolbar-title>
       <card-toolbar-actions>
-        <button (click)="loadChromecasts()" md-icon-button><md-icon>refresh</md-icon></button>
+        <button (click)="loadChromecasts()" mat-icon-button><mat-icon>refresh</mat-icon></button>
       </card-toolbar-actions>
     </card-toolbar>
     <card-progress-bar *ngIf="loading"></card-progress-bar>
-  </md-card-header>
-  <md-card-content>
+  </mat-card-header>
+  <mat-card-content>
 
     <div class="container"
          fxLayout
@@ -20,19 +20,23 @@
          fxLayoutGap.xs="0">
 
       <div fxFlex="60%">
-        <md-select class="full-width" name="device" placeholder="Appareil" [(ngModel)]="message.device" [disabled]="loading" >
-          <md-option *ngFor="let chromecast of chromecasts" [value]="chromecast.deviceName">
+        <mat-form-field>
+        <mat-select class="full-width" name="device" placeholder="Appareil" [(ngModel)]="message.device" [disabled]="loading" >
+          <mat-option *ngFor="let chromecast of chromecasts" [value]="chromecast.deviceName">
             {{chromecast.name}}
-          </md-option>
-        </md-select>
+          </mat-option>
+        </mat-select>
+        </mat-form-field>
       </div>
 
       <div fxFlex="40%">
-        <md-select name="language" [(ngModel)]="message.language" [disabled]="loading" >
-          <md-option value="fr-CA">Français</md-option>
-          <md-option value="en">Anglais</md-option>
-          <md-option value="en-UK">British</md-option>
-        </md-select>
+        <mat-form-field>
+        <mat-select name="language" [(ngModel)]="message.language" [disabled]="loading" >
+          <mat-option value="fr-CA">Français</mat-option>
+          <mat-option value="en">Anglais</mat-option>
+          <mat-option value="en-UK">British</mat-option>
+        </mat-select>
+        </mat-form-field>
       </div>
     </div>
 
@@ -43,14 +47,14 @@
          fxLayoutGap="10px"
          fxLayoutGap.xs="0">
       <div fxFlex class="input-message">
-        <md-form-field>
-          <input mdInput name="'text" placeholder="Message" [(ngModel)]="message.text" [disabled]="loading" >
-        </md-form-field>
+        <mat-form-field>
+          <input matInput name="'text" placeholder="Message" [(ngModel)]="message.text" [disabled]="loading" >
+        </mat-form-field>
       </div>
     </div>
-  </md-card-content>
+  </mat-card-content>
 
-  <md-card-actions >
-    <button (click)="sendMessage()" md-raised-button class="item-form" type="submit" [disabled]="loading" >Envoyer</button>
-  </md-card-actions>
-</md-card>
+  <mat-card-actions >
+    <button (click)="sendMessage()" mat-raised-button class="item-form" type="submit" [disabled]="loading" >Envoyer</button>
+  </mat-card-actions>
+</mat-card>
