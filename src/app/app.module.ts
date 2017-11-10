@@ -10,8 +10,8 @@ import { LocalDeviceListComponent } from './local-device-list/local-device-list.
 import {LocalDeviceService} from "./local-device-list/local-device.service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
-  MatButtonModule, MdFormFieldModule, MdIconModule, MdInputModule, MdSelectModule,
-  MdTableModule
+  MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatSelectModule,
+  MatTableModule
 } from '@angular/material';
 import {MatCardModule} from '@angular/material';
 import { FlexLayoutModule } from "@angular/flex-layout";
@@ -47,11 +47,11 @@ import { ChartsModule } from 'ng2-charts';
     FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MdIconModule,
-    MdFormFieldModule,
-    MdInputModule,
-    MdSelectModule,
-    MdTableModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatTableModule,
     MatCardModule,
     FlexLayoutModule,
     MatToolbarModule,
