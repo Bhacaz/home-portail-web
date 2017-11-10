@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {WeatherService} from "../weather.service";
 import {DatePipe} from "@angular/common";
+import {COLORSCHART} from "../../../../assets/colors/chart";
 
 @Component({
   selector: 'weather-forecast',
@@ -75,8 +76,17 @@ export class WeatherForecastComponent implements OnInit {
     return timeLabel;
   }
   public lineChartOptions:any = {
-    responsive: true
+    responsive: true,
+    maintainAspectRatio: false
   };
   public lineChartLegend:boolean = true;
   public lineChartType:string = 'line';
+
+  public lineChartColors:Array<any> = [
+    COLORSCHART.green,
+    COLORSCHART.blue,
+    COLORSCHART.orange
+  ];
+
+
 }
