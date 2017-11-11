@@ -42,10 +42,10 @@
         {{currentWeather?.weather[0].description}}
       </div>
       <div fxFlex class="center-text right-separator">
-        <h2>{{currentWeather?.wind.speed}} km/h</h2>
+        <mat-icon svgIcon="weather-windy"></mat-icon> <h2>{{currentWeather?.wind.speed}} km/h</h2>
       </div>
       <div fxFlex="20%" class="center-text">
-        {{currentWeather?.wind.deg}} °
+        <mat-icon svgIcon="navigation" style="display: inline-block; transform: rotate({{currentWeather?.wind.deg}}deg);"></mat-icon>{{currentWeather?.wind.deg}} °
       </div>
     </div>
 

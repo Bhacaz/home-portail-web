@@ -17,7 +17,7 @@ export class WeatherForecastComponent implements OnInit {
     {data: [], label: 'Maximum'}
   ];
   forecastRainData: Array<any> = [
-    {data: [], label: 'Pluie'}
+    {data: [], label: 'Précipitation'}
   ];
   forecastTempLabel: Array<any> = [];
 
@@ -48,7 +48,8 @@ export class WeatherForecastComponent implements OnInit {
       temp.push(main.temp);
       temp_min.push(main.temp_min);
       temp_max.push(main.temp_max);
-      rain.push(list.rain['3h']);
+      let prec = list.rain['3h'] || list.snow['3h'] || 0;
+      rain.push(prec);
       label.push(list.dt);
     }
     this.forecastTempData[0].data = temp;

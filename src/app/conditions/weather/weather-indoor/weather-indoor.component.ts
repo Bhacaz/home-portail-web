@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {WeatherService} from "../weather.service";
 
 @Component({
   selector: 'weather-indoor',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeatherIndoorComponent implements OnInit {
 
-  constructor() { }
+  indoorCondition: any = {temperature: '-', humidity: '-'};
+
+  constructor(
+    private _weatherService: WeatherService
+  ) { }
 
   ngOnInit() {
+    this.getIndoorCondition()
+  }
+
+  getIndoorCondition() {
+    this._weatherService.getIndoor()
+      .subscribe(data => this.indoorCondition = data);
   }
 
 }

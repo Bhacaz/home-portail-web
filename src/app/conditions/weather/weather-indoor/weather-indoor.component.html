@@ -5,6 +5,14 @@
     </card-toolbar-title>
   </card-toolbar>
   <mat-card-content>
-    Works
+    <div class="container"
+         fxLayout="row"
+         fxLayout.xs="column"
+         fxLayoutAlign="center strecth"
+         fxLayoutGap="10px"
+         fxLayoutGap.xs="10px">
+      <div fxFlex class="right-separator center-text"><mat-icon svgIcon="temperature-celsius"></mat-icon> {{indoorCondition.temperature}} °</div>
+      <div fxFlex class="center-text">Hum: {{indoorCondition.humidity}} %</div>
+    </div>
   </mat-card-content>
 </mat-card>

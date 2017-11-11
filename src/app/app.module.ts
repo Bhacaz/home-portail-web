@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import {BrowserModule, DomSanitizer} from '@angular/platform-browser';
 import {LOCALE_ID, NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -10,7 +10,7 @@ import { LocalDeviceListComponent } from './local-device-list/local-device-list.
 import {LocalDeviceService} from "./local-device-list/local-device.service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
-  MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatSelectModule,
+  MatButtonModule, MatFormFieldModule, MatIconModule, MatIconRegistry, MatInputModule, MatSelectModule,
   MatTableModule
 } from '@angular/material';
 import {MatCardModule} from '@angular/material';
@@ -68,4 +68,9 @@ import { ChartsModule } from 'ng2-charts';
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })
-export class AppModule { }
+
+export class AppModule {
+  constructor(matIconRegistry: MatIconRegistry, domSanitizer: DomSanitizer){
+    matIconRegistry.addSvgIconSet(domSanitizer.bypassSecurityTrustResourceUrl('./assets/mdi.svg'));
+  }
+}
