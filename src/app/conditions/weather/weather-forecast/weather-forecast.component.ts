@@ -48,7 +48,7 @@ export class WeatherForecastComponent implements OnInit {
       temp.push(main.temp);
       temp_min.push(main.temp_min);
       temp_max.push(main.temp_max);
-      let prec = list.rain['3h'] || list.snow['3h'] || 0;
+      let prec = (list && list.rain && list.rain['3h']) || (list && list.snow && list.snow['3h']) || 0;
       rain.push(prec);
       label.push(list.dt);
     }
