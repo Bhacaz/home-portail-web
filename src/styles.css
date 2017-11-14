@@ -39,3 +39,12 @@ body {
 .capitalize{
   text-transform: capitalize;
 }
+
+.flat {
+  color: #000000;
+  text-decoration: none;
+}
+
+.container{
+  padding-bottom: 20px;
+}

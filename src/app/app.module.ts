@@ -27,6 +27,9 @@ import { WeatherIndoorComponent } from './conditions/weather/weather-indoor/weat
 import { DateTimeComponent } from './conditions/date-time/date-time.component';
 import {WeatherService} from "./conditions/weather/weather.service";
 import { ChartsModule } from 'ng2-charts';
+import {appRoutes} from "./app.routes";
+import {RouterModule} from "@angular/router";
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -39,12 +42,14 @@ import { ChartsModule } from 'ng2-charts';
     WeatherCurrentComponent,
     WeatherForecastComponent,
     WeatherIndoorComponent,
-    DateTimeComponent
+    DateTimeComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
+    RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,

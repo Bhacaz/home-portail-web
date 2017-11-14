@@ -5,3 +5,8 @@ mat-form-field{
 .input-message{
   padding-top: 15px;
 }
+
+:host /deep/ {
+  max-width: 300px;
+  max-height: 300px;
+}

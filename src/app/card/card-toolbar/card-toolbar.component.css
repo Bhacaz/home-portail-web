@@ -4,12 +4,17 @@
 
 .card-toolbar{
   margin-bottom: 15px;
+  display: -webkit-box !important;
 }
 
 .card-toolbar-title{
   line-height: 25px;
   vertical-align: middle;
   font-size: large;
+}
+
+.card-toolbar-actions {
+  display: inline-table;
 }
 
 :host /deep/ .mat-icon-button {

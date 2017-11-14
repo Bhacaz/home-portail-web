@@ -1,42 +1,5 @@
 <mat-toolbar>
-  <span>Portail des Oubliettes</span>
+  <span><a class="flat" routerLink="/">Portail des Oubliettes</a></span>
 </mat-toolbar>
-<div id="main-container">
-  <div class="container"
-       fxLayout
-       fxLayout.xs="column"
-       fxLayoutAlign="center stretch"
-       fxLayoutGap="10px"
-       fxLayoutGap.xs="10px">
-    <div fxFlex>
-      <div class="container"
-           fxLayout="column"
-           fxLayout.xs="column"
-           fxLayoutAlign="center strecth"
-           fxLayoutGap="10px"
-           fxLayoutGap.xs="10px">
-        <div fxFlex><date-time></date-time></div>
-        <div fxFlex><weather-current></weather-current></div>
-        <div fxFlex><weather-forecast></weather-forecast></div>
 
-      </div>
-    </div>
-
-    <div fxFlex="350px">
-      <app-chromecast-list></app-chromecast-list> <br>
-      <weather-indoor></weather-indoor>
-    </div>
-  </div>
-
-  <div class="container"
-       fxLayout
-       fxLayout.xs="column"
-       fxLayoutAlign="center"
-       fxLayoutGap="10px"
-       fxLayoutGap.xs="0">
-    <div fxFlex>
-      <app-local-device-list></app-local-device-list>
-    </div>
-  </div>
-</div>
-
+<router-outlet></router-outlet>
