@@ -30,6 +30,8 @@ import { ChartsModule } from 'ng2-charts';
 import {appRoutes} from "./app.routes";
 import {RouterModule} from "@angular/router";
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { VacuumComponent } from './vacuum/vacuum.component';
+import {VacuumService} from "./vacuum/vacuum.service";
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     WeatherForecastComponent,
     WeatherIndoorComponent,
     DateTimeComponent,
-    DashboardComponent
+    DashboardComponent,
+    VacuumComponent
   ],
   imports: [
     BrowserModule,
@@ -68,6 +71,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ChromecastService,
     LocalDeviceService,
     WeatherService,
+    VacuumService,
     { provide: LOCALE_ID, useValue: 'fr-CA' }
   ],
   bootstrap: [AppComponent],

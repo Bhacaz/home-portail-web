@@ -15,7 +15,7 @@ export class WeatherIndoorComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getIndoorCondition()
+    this.getIndoorCondition();
   }
 
   getIndoorCondition() {

@@ -1,0 +1,21 @@
+<mat-card>
+  <card-toolbar>
+    <card-toolbar-title>
+      Balayeuse
+    </card-toolbar-title>
+  </card-toolbar>
+  <mat-card-content>
+    <div>
+      <h2>{{status.state}}</h2>
+    </div>
+    <button (click)="stop()" mat-icon-button><mat-icon>battery_charging_full</mat-icon></button>
+    {{status.battery}} %
+    <div>
+      <button (click)="pause()" mat-icon-button><mat-icon>pause_circle_filled</mat-icon></button>
+    </div>
+    <div>
+      <button (click)="start()" mat-icon-button><mat-icon>play_circle_filled</mat-icon></button>
+    </div>
+
+  </mat-card-content>
+</mat-card>
