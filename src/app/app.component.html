@@ -1,5 +1,16 @@
+<mat-menu #appMenu="matMenu">
+  <button mat-menu-item [routerLink]="['/']"> Accueil </button>
+  <button mat-menu-item [routerLink]="['/cast']"> Chromecast </button>
+  <button mat-menu-item [routerLink]="['/weather']"> Température </button>
+  <button mat-menu-item [routerLink]="['/local-device']"> Appareil local </button>
+</mat-menu>
+
+
 <mat-toolbar>
   <span><a class="flat" routerLink="/">Portail des Oubliettes</a></span>
+  <span class="spacer"></span>
+  <button mat-icon-button [matMenuTriggerFor]="appMenu"><mat-icon>menu</mat-icon></button>
+
 </mat-toolbar>
 
 <router-outlet></router-outlet>

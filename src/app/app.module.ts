@@ -10,7 +10,7 @@ import { LocalDeviceListComponent } from './local-device-list/local-device-list.
 import {LocalDeviceService} from "./local-device-list/local-device.service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
-  MatButtonModule, MatFormFieldModule, MatIconModule, MatIconRegistry, MatInputModule, MatSelectModule,
+  MatButtonModule, MatFormFieldModule, MatIconModule, MatIconRegistry, MatInputModule, MatMenuModule, MatSelectModule,
   MatTableModule
 } from '@angular/material';
 import {MatCardModule} from '@angular/material';
@@ -65,7 +65,8 @@ import {VacuumService} from "./vacuum/vacuum.service";
     MatToolbarModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
-    ChartsModule
+    ChartsModule,
+    MatMenuModule
   ],
   providers: [
     ChromecastService,
