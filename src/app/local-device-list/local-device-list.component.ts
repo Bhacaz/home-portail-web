@@ -14,6 +14,7 @@ export class LocalDeviceListComponent implements OnInit {
   localDevices: LocalDevice[] = [];
   dataSource: LocalDeviceDataSource | null;
   displayedColumns = ['name', 'ip', 'mac'];
+  loading: boolean = true;
 
   constructor(
     private _localDeviceService: LocalDeviceService,
@@ -24,10 +25,12 @@ export class LocalDeviceListComponent implements OnInit {
   }
 
   loadLocalDevices() {
+    this.loading = true;
     this.dataSource = new LocalDeviceDataSource(this._localDeviceService);
     this.dataSource.connect()
       .subscribe(data => {
         this.localDevices = data;
+        this.loading = false;
       });
   }
 }

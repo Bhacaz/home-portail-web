@@ -8,10 +8,11 @@
         <button (click)="loadLocalDevices()" mat-icon-button><mat-icon>refresh</mat-icon></button>
       </card-toolbar-actions>
     </card-toolbar>
+    <card-progress-bar *ngIf="loading"></card-progress-bar>
   </mat-card-header>
 
   <mat-card-content>
-    <mat-table #table [dataSource]="dataSource" id="local-devices-table">
+    <mat-table #table [dataSource]="dataSource"id="local-devices-table" *ngIf="!loading">
       <ng-container matColumnDef="name">
         <mat-header-cell *matHeaderCellDef> Nom </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
