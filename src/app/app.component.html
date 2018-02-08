@@ -9,6 +9,7 @@
 <mat-toolbar>
   <span><a class="flat" routerLink="/">Portail des Oubliettes</a></span>
   <span class="spacer"></span>
+  <button mat-icon-button (click)="openPiHoleAdmin()"><mat-icon svgIcon="pi-hole"></mat-icon></button>
   <button mat-icon-button [matMenuTriggerFor]="appMenu"><mat-icon>menu</mat-icon></button>
 
 </mat-toolbar>
